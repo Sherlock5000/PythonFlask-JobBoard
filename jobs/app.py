@@ -10,7 +10,7 @@ def open_connection():
     if connection == None:
         connection = g._connection = sqlite3.connect(PATH)
     connection.row_factory = sqlite3.Row
-    return _connection
+    return connection
 
 def execute_sql(sql, values = (), commit = False, single = False):
     connection = open_connection()
